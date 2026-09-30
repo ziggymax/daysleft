@@ -11,7 +11,7 @@ on:
 
 jobs:
   build_app:
-    name: Build application
+    name: Build and deploy application
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -33,26 +33,13 @@ jobs:
       - name: Build app
         run: ./build.sh
 
-  deploy_app:
-    name: Deploy application to pages
-    needs: build_app
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write      # To deploy to Pages
-      id-token: write   # To verify the deployment originates from an appropriate source
-    environment:        # Deploy to the github-pages environment
-        name: github-pages
-        url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Setup Pages
-        uses: actions/configure-pages@v6
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
           path: '../index.html'
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v6
 
       - name: Deploy to GitHub Pages
         id: deployment
