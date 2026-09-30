@@ -31,16 +31,19 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Build app
+        run: ./build.sh
+          ./buil
+
+      - name: Wrap application for deployment
         run: |
-          pwd
-          ls -al
-          ./build.sh
-          ls -al ../
+          cd ..
+          mkdir -p pages
+          mv index.html pages/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: '../index.html'
+          path: '../pages'
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
