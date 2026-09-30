@@ -1,6 +1,6 @@
 # This workflow is triggered on pull requests, it builds the application
 # to make sure everything works
-name: Validate pull request to main
+name: Pull request to main
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   build_app:
-    name: Build and deploy application
+    name: Build application
     runs-on: ubuntu-latest
     permissions:
       contents: read
