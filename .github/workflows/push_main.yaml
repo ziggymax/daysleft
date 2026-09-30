@@ -1,11 +1,10 @@
-# This workflow is triggered on push to the main branch and on pull requests
-# to the main branch. It runs all tests, builds a Docker image, and deploys
-# the test coverage report to GitHub Pages.
-name: Validate pull requests to main
+# This workflow is triggered on push to the main branch. It builds the application
+# and deploys it to GitHub Pages.
+name: Push update to main
 
 on:
   workflow_dispatch:
-  pull_request:
+  push:
     branches:
       - main
 

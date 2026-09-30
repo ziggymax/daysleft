@@ -1,0 +1,28 @@
+# This workflow is triggered on pull requests, it builds the application
+# to make sure everything works
+name: Validate pull request to main
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_app:
+    name: Build and deploy application
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Create app folder
+        run: |
+          mkdir -p app
+          cd app
+
+      - name: Checkout repo
+        uses: actions/checkout@v7
+
+      - name: Build app
+        run: ./build.sh
