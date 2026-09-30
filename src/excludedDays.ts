@@ -11,4 +11,10 @@ export type ExcludedDay =
   | { from: string; to: string; note?: string }
 
 export const EXCLUDED_DAYS: ExcludedDay[] = [
+  { from: '2026-10-19', to: '2026-11-01', note: 'Ferie' },
+  { date: '2026-12-03', note: 'Fri' },
+  { from: '2026-12-22', to: '2027-01-03', note: 'Jul og nytår' },
+  { from: '2027-02-19', to: '2027-03-01', note: 'Ferie' },
+  { from: '2027-03-23', to: '2027-03-25', note: 'Påskeferie' },
+  { from: '2027-06-16', to: '2027-06-30', note: 'Ferie' }
 ]
