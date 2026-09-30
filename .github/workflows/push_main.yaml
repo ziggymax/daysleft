@@ -31,7 +31,11 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Build app
-        run: ./build.sh
+        run: |
+          pwd
+          ls -al
+          ./build.sh
+          ls -al ../
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
