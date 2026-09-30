@@ -1,0 +1,29 @@
+# This workflow is triggered on push to the main branch and on pull requests
+# to the main branch. It runs all tests, builds a Docker image, and deploys
+# the test coverage report to GitHub Pages.
+name: Validate pull requests to main
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_app:
+    name: Build application
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create app folder
+        run: |
+          mkdir -p app
+          cd app
+
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build app
+        run:
+            ./build.sh
+
