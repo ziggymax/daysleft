@@ -32,7 +32,6 @@ jobs:
 
       - name: Build app
         run: ./build.sh
-          ./buil
 
       - name: Wrap application for deployment
         run: |
