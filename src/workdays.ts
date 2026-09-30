@@ -25,7 +25,7 @@ export function startOfToday(): Date {
 const excluded = new Set<string>()
 for (const entry of EXCLUDED_DAYS) {
   if ('date' in entry) {
-    excluded.add(entry.date)
+    excluded.add(toKey(parseDate(entry.date)))
   } else {
     for (let d = parseDate(entry.from); d <= parseDate(entry.to); d = addDays(d, 1)) {
       excluded.add(toKey(d))

@@ -16,5 +16,6 @@ export const EXCLUDED_DAYS: ExcludedDay[] = [
   { from: '2026-12-22', to: '2027-01-03', note: 'Jul og nytår' },
   { from: '2027-02-19', to: '2027-03-01', note: 'Ferie' },
   { from: '2027-03-23', to: '2027-03-25', note: 'Påskeferie' },
+  { date: '2027-05-06', note: 'Kr.Himmelfartsdag' },
   { from: '2027-06-16', to: '2027-06-30', note: 'Ferie' }
 ]
