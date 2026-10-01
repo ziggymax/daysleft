@@ -14,13 +14,16 @@ body {
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Vertical split: 5% top, 30% text, 5% gap, 5% bar, 5% gap, 45% smiley, 5% bottom. */
+/* Vertical stack: text (~30%), 5% gap, 5% bar, 5% gap, smiley (45%), centred as a group.
+   Rows hug their content, so the bar stays midway between text and smiley even when
+   narrow screens shrink the text and smiley below their height-based sizes. */
 .app {
   --h: 100vh;
   height: var(--h);
   padding: calc(var(--h) * 0.05) 0;
   display: grid;
-  grid-template-rows: 30fr 5fr 45fr;
+  grid-template-rows: auto calc(var(--h) * 0.05) min(calc(var(--h) * 0.45), 90vw);
+  align-content: center;
   row-gap: calc(var(--h) * 0.05);
   justify-items: center;
 }
@@ -97,7 +100,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 25px;
+  font-size: 18px;
   color: #000000;
   pointer-events: none;
 }
