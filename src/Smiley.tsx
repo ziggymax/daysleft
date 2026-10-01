@@ -22,7 +22,7 @@ export default function Smiley({ happiness }: Props) {
 
   return (
     <svg className="smiley" viewBox="0 0 100 100" role="img" aria-label="Smiley">
-      <circle cx="50" cy="50" r="46" fill="rgb(255, 255, 75)" stroke="#222" strokeWidth="3" />
+      <circle cx="50" cy="50" r="46" fill="rgb(255, 222, 76)" stroke="#222" strokeWidth="3" />
       <ellipse cx="35" cy="38" rx="4.5" ry="6.5" fill="#222" />
       <ellipse cx="65" cy="38" rx="4.5" ry="6.5" fill="#222" />
       <path d={mouth} fill="none" stroke="#222" strokeWidth="4" strokeLinecap="round" />

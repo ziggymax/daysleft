@@ -50,7 +50,7 @@ body {
 .big {
   font-size: min(calc(var(--h) * 0.15), 18vw);
   font-weight: 800;
-  color: rgb(150, 30, 0);
+  color: rgb(204, 26, 9);
 }
 
 .label {
@@ -59,9 +59,10 @@ body {
 }
 
 .bar {
-  /* Fallback until App sets the width to 120% of the text width. */
+  /* Fallback until App sets the width to 80% of the text width. */
   width: 90vw;
-  height: 100%;
+  height: 50%;
+  align-self: center;
   background: #e0e0e0;
   border: 3px solid #000;
   border-radius: calc(var(--h) * 0.08);
@@ -83,4 +84,20 @@ body {
 .smiley {
   height: 100%;
   max-width: 90vw;
+}
+
+/* Build date, centred in the 5% bottom padding. Lives in index.html so it can be replaced with sed after build. */
+.build-date {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5vh;
+  height: dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  color: #000000;
+  pointer-events: none;
 }

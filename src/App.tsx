@@ -64,7 +64,7 @@ export default function App() {
 
       <div
         className="bar"
-        style={textWidth ? { width: `min(${textWidth * 1.2}px, 95vw)` } : undefined}
+        style={textWidth ? { width: `min(${textWidth * 0.8}px, 95vw)` } : undefined}
         role="progressbar"
         aria-valuenow={Math.round(progress * 100)}
         aria-valuemin={0}
