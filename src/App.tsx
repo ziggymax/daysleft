@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import Smiley from './Smiley'
 import { getStatus, remainingOverride, startOfToday } from './workdays'
 
-const START_COLOR = [255, 255, 0] // gul
+const START_COLOR = [255, 225, 0] // gul
 const END_COLOR = [0, 225, 0] // grøn
 
 function barColor(progress: number): string {
